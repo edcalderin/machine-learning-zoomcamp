@@ -2,7 +2,7 @@ FROM python:3.11.5-slim
 
 RUN pip install pipenv
 
-WORKDIR app
+WORKDIR /app
 
 COPY Pipfile Pipfile.lock ./
 
