@@ -3,3 +3,7 @@
 __pycache__
 .env
 clothing-dataset-small
+*.zip
+08-neural-networks/homework/data/*
+*.h5
+*.tflite
