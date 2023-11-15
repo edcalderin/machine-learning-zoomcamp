@@ -1,0 +1,19 @@
+services:
+
+  clothing-model:
+    image: tensorflow/serving
+    environment:
+      - MODEL_NAME=clothing-model
+    volumes:
+      - ./clothing-model:/models/clothing-model/1
+    ports:
+      - 8500:8500
+
+  gateway:
+    build:
+      context: .
+      dockerfile: image-gateway.dockerfile
+    environment:
+      - TF_SERVING_HOST=clothing-model:8500
+    ports:
+      - 8080:8080
