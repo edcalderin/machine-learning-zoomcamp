@@ -7,3 +7,4 @@ clothing-dataset-small
 08-neural-networks/homework/data/*
 *.h5
 *.tflite
+clothing-model/
