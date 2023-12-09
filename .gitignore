@@ -8,3 +8,4 @@ clothing-dataset-small
 *.h5
 *.tflite
 clothing-model/
+.vscode
