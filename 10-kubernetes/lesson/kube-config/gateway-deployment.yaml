@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gateway
+spec:
+  selector:
+    matchLabels:
+      app: gateway
+  template:
+    metadata:
+      labels:
+        app: gateway
+    spec:
+      containers:
+      - name: gateway-pod
+        image: 345098143492.dkr.ecr.us-east-2.amazonaws.com/fashion-images:gateway-001
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        env:
+        - name: TF_SERVING_HOST
+          value: tf-serving-clothing-model.default.svc.cluster.local:8500
+        ports:
+        - containerPort: 8080

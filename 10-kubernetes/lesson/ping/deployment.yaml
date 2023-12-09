@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: ping-pod
-        image: ping:v001
+        image: ping:001
         resources:
           limits:
             memory: "128Mi"
